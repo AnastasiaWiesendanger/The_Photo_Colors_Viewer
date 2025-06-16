@@ -5,7 +5,7 @@ Docenti: A. Gysin, G. Profeta
 Elaborato 1: Me, Myself & AI  
 
 # Titolo progetto
-Autore: Hans Manon  
+Autore: Hans Manon 
 [Titolo progetto](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
 
