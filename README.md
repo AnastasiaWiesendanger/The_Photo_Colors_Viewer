@@ -5,8 +5,8 @@ Docenti: A. Gysin, G. Profeta
 Elaborato 1: Me, Myself & AI  
 
 # Titolo progetto
-Autore: Anastasia Wiesendanger 
-[The Photo Colors Viewer](https://anastasiawiesendanger.github.io/The_Photo_Colors_Viewer/)
+Autore: Hans Manon 
+[Titolo progetto](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
 
 ## Introduzione e tema
