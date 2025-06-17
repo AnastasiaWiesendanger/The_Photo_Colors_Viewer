@@ -6,7 +6,7 @@ Elaborato 1: Me, Myself & AI
 
 # Titolo progetto
 Autore: Hans Manon 
-[Titolo progetto](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
+[Titolo progetto](https://anastasiawiesendanger.github.io/The_Photo_Colors_Viewer/)
 
 
 ## Introduzione e tema
