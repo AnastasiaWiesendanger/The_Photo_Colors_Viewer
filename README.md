@@ -40,7 +40,8 @@ file.Colors.sort((a, b) => {
                 });
 
 [<img src="doc/cards.jpg" width="500" alt="Tonalità">]()
-[<img src="doc/munari.jpg" width="500" alt="Luminosità">]()               
+[<img src="doc/munari.jpg" width="500" alt="Luminosità">]() 
+[<img src="doc/Saturazione.jpg" width="500" alt="Saturazione">]()             
 
 ## Target e contesto d’uso
 Questo articolo è stato principalmente crearto con l'intenzione di essere mostrato agli studenti che frequentano il Bachelor di Comunicazione Visiva, più specificamente per chi frequenta o vorrà frequentare la classe di Interaction Design. Il siot ha lo scopo principlae di incuriosire l'utente, di mostrare come vi esistono difreneti modi per costruire/mostrare qualcosa oltre che ha mostrare come tramite il codice si possno organizzare numerosi elementi.
