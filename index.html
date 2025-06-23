@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Esempio 03: Colors</title>
+    <title>The Photo Colors Viewer</title>
     <style>
         body {
             margin: 0;
             font-family: Avenir, sans-serif;
             display: flex;
+            flex-direction: column;
             height: 100vh;
             background-color: #d6d6da;
+        }
+
+        .title-container {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #191919;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: -0.05em;
         }
 
         main {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: 100%;
             width: 100%;
         }
 
@@ -39,7 +55,7 @@
             justify-content: left;
             padding: 0px;
             overflow-y: auto;
-            height: auto; /* Let flex manage height */
+            height: auto;
         }
 
         .grid-container {
@@ -71,17 +87,15 @@
     </style>
 </head>
 <body>
+    <div class="title-container">
+        <h1>The Photo Colors Viewer</h1>
+    </div>
     <main>
         <div class="sidebar">
             <div class="control-section">
                 <label for="altezzaPallini"> Zoom </label>
                 <input type="range" id="altezzaPallini" min="0.5" max="50" value="0.5" />
             </div>
-            <!-- Griglia generata dinamicamente
-             <div class="control-section">
-                <label for="gapPallini">Spazio tra i pallini</label>
-                <input type="range" id="gapPallini" min="0" max="10" value="0" />
-            </div> -->
 
             <div class="control-section">
                 <label for="orderColorsSelect">Ordina colori per</label>
@@ -112,7 +126,6 @@
     <script type="module">
         const gridContainer = document.getElementById('grid-container');
         const altezzaPalliniInput = document.getElementById('altezzaPallini');
-        //const gapPalliniInput = document.getElementById('gapPallini');
         const jsonFileSelect = document.getElementById('jsonFile');
         const orderColorsSelect = document.getElementById('orderColorsSelect');
 
@@ -157,9 +170,7 @@
             return `${giornoSettimana} ${giorno}/${mese}/${anno} ${ore}:${minuti}`;
         }
 
-        // funzione per convertire HEX in HSL (hue,saturation,light)
         function hexToHSL(hex) {
-            // Rimuove '#' se presente
             hex = hex.replace(/^#/, "");
             let r = parseInt(hex.substring(0, 2), 16) / 255;
             let g = parseInt(hex.substring(2, 4), 16) / 255;
@@ -170,7 +181,7 @@
             let h, s, l = (max + min) / 2;
 
             if (max === min) {
-                h = s = 0; // grigio
+                h = s = 0;
             } else {
                 const d = max - min;
                 s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
@@ -192,8 +203,6 @@
 
         function aggiornaGriglia() {
             gridContainer.innerHTML = "";
-            // Rimossa la gestione gapPallini, spazio tra pallini non più presente
-            //gridContainer.style.gap = `${gapPalliniInput.value}px`;
             const altezza = altezzaPalliniInput.value;
             let larghezza;
 
@@ -214,16 +223,14 @@
                 rowDiv.style.display = "flex";
                 rowDiv.style.flexDirection = "row";
 
-                // Trova la data EXIF corrispondente
-                const createDate = mappaDate[file.FileName]; // Usa il nome del file per trovare la data
+                const createDate = mappaDate[file.FileName];
                 if (createDate) {
                     const dataFormattata = formattaDataIt(createDate);
-                    rowDiv.title = dataFormattata; // Imposta il titolo con la data formattata
+                    rowDiv.title = dataFormattata;
                 } else {
-                    rowDiv.title = "Data non trovata"; // Messaggio di fallback
+                    rowDiv.title = "Data non trovata";
                 }
 
-                // Ordinamento in base al selettore orderColorsSelect
                 file.Colors.sort((a, b) => {
                     const hslA = hexToHSL(a);
                     const hslB = hexToHSL(b);
@@ -252,7 +259,6 @@
         }
 
         altezzaPalliniInput.addEventListener("input", aggiornaGriglia);
-        //gapPalliniInput.addEventListener('input', aggiornaGriglia);
         jsonFileSelect.addEventListener("change", caricaColori);
         orderColorsSelect.addEventListener("change", aggiornaGriglia);
 
@@ -260,4 +266,5 @@
     </script>
 </body>
 </html>
+
 
