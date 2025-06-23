@@ -6,7 +6,7 @@ Elaborato 1: Archivio
 
 # Photo Colors Viewer
 Autore: Anastasia Wiesendanger
-[Titolo progetto](https://anastasiawiesendanger.github.io/The_Photo_Colors_Viewer/)
+[The_phptp_Colors_Viewer](https://anastasiawiesendanger.github.io/The_Photo_Colors_Viewer/)
 
 
 ## Introduzione e tema
